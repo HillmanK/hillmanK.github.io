@@ -1,0 +1,623 @@
+
+/* FONT STYLES */
+
+@font-face {
+    font-family: "Bebas Neue";
+    src: url('Resources/BebasNeue-Regular.woff2') format('woff2'),
+        url('Resources/BebasNeue-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;   
+}
+
+@font-face {
+    font-family: "Poiret One";
+    src: url('Resources/PoiretOne-Regular.woff2') format('woff2'),
+        url('Resources/PoiretOne-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;   
+}
+
+
+
+/* GLOBAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue"
+}
+
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+
+@media screen and (min-width: 320px) {
+    html {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    html {
+      font-size: 19px;
+    }
+  }
+
+
+.banner {    
+    background-image: url('Resources/banner2.jpg'); 
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; 
+    min-height: 400px;     
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .banner {
+        min-height: 450px;
+        background-image: url('Resources/banner3.jpg');
+    }
+}
+
+
+h1,
+h2 {
+    letter-spacing: 0.2rem;
+    margin-bottom: 0.5rem;
+    padding-top: 2rem;
+}
+
+
+h1 {      
+    word-spacing: 0.1em;    
+    font-size: 2.3rem;    
+    padding-top: 0.5rem;
+    margin-bottom: 0.8rem;        
+}
+
+
+h2 {    
+    font-size: 1.8rem;     
+    color: black;    
+    text-decoration: underline;
+    text-decoration-color: rgb(32, 162, 178);
+    margin-bottom: 1.5rem;
+}
+
+
+h4,
+h3 {
+    font-family: "Poiret One";
+    padding-left: 0.5rem;
+}
+
+
+h3 {
+    padding-bottom: 0.5rem;
+}
+
+
+h6 {    
+    font-size: 2rem;
+    letter-spacing: 0.2em; 
+    text-align: center;    
+}
+
+
+h6, 
+h1 > span,
+a:hover
+ {
+    color:rgb(32, 162, 178);   
+}
+
+
+p {
+    font-family: "Poiret One";
+    margin-bottom: 0.8rem;    
+    font-size: 1.2rem;     
+}
+
+
+p a {
+    color:rgb(32, 162, 178);    
+}
+
+
+p a:hover {
+    color: rgb(45, 45, 45);
+}
+
+
+ol, ul {
+    list-style: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;    
+    letter-spacing: 0.1rem;
+}
+
+hr {
+    border-color: rgb(0, 0, 0);    
+    max-width: 1200px;    
+    margin: 0 auto;    
+}
+
+
+
+
+
+/* NAV STYLES */
+
+ header {
+    background-color: rgb(0, 0, 0);
+    text-align: left;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    opacity: 0.85;   
+}
+
+
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    transform: scale(1,0);   
+}
+
+
+nav li {
+    margin: 0 0 1em 1em;    
+}
+
+
+nav a {
+    color: rgb(255, 255, 255);   
+    font-size: 1.2rem;    
+    opacity: 0;       
+}
+
+
+nav a:hover {
+    color:rgb(32, 162, 178);   
+}
+
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);    
+}
+
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    
+}
+
+
+.nav-toggle {
+    display: none;
+}
+
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left:0;
+    margin-left: 1em;    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: rgb(255, 255, 255);
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+    
+}
+
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+
+.nav-toggle-label span::before, .nav-toggle-label span::after {
+    bottom: 7px;
+}
+
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+
+@media only screen and (min-width: 700px) {
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr minmax(200px, 1fr) minmax(300px, 3fr) 1fr;       
+    }
+
+
+    nav {             
+        all:unset;   
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 1rem;         
+        grid-column: 2 / 5;       
+    }
+
+    nav a {
+        opacity: 1;
+    }
+
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+
+    h6 {
+        display: flex;  
+        margin-left: 1rem; 
+        padding-top: 0.5rem;               
+    }
+
+    
+    nav ul {
+        display: flex;
+        justify-content: flex-end;          
+    }
+
+
+    nav li {
+        margin-right: 2rem;        
+    }
+
+
+    nav li:last-of-type {
+        margin-right: 1rem;    
+    }    
+   
+}
+
+
+@media only screen and (min-width: 1100px) {
+    
+    nav li {
+        margin-right: 4rem;
+    }
+
+    nav li:last-of-type {
+        margin-right: 1rem;
+    }
+}
+    
+
+/* BUSINESS INTRODUCTION STYLES */
+
+
+.business-introduction {
+     margin: 0 auto;
+     display: flex;     
+     flex-direction: column;
+     align-items: center; 
+     max-width: 1100px;    
+     padding: 1rem 0.5rem 2rem 0.5rem;       
+}
+
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;    
+}
+
+
+.contact-button {    
+    cursor: pointer;    
+    color: rgb(0, 0, 0);
+    padding: 0.5em 1.3em;    
+    background: transparent;
+    font-size: 1.8rem;
+    border: 0;        
+    position: relative; 
+    letter-spacing: 0.1rem;    
+}
+
+
+.contact-button::after { 
+    content: '';
+    position: absolute;
+    height: .85em;
+    width: 52%;    
+    left: 17%;
+    top: 45%;
+    z-index: -1;
+    transition: transform 175ms cubic-bezier(1,.04,.56,1.55);
+    transform-origin: bottom left;
+    background: rgb(32, 162, 178);
+}
+
+.contact-button:hover::after  { 
+    transform: scale(1.25, 1.8);
+}
+
+
+
+/* GALLERY STYLES */
+
+.gallery-wrapper {
+     margin: 0 auto;
+     max-width: 1200px;     
+}
+
+
+.gallery-rows {
+    width: 100%;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;    
+}
+
+
+.images {       
+    display: flex;
+    flex-wrap: wrap;    
+    align-items: flex-end;
+    width: 300px;    
+    height: 300px;
+    margin: 0.5rem;
+    border: 2px solid rgb(0, 0, 0);           
+}
+
+.images:hover {
+    box-shadow: 0 5px 25px rgba(0,0,0,1);
+}
+
+
+.image1 {    
+    background-image: url('Resources/Deku.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-grow: 10;
+    
+}
+
+.image2 {
+    background-image: url('Resources/AllMight.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    flex-grow: 1; 
+    
+}
+
+.image3 {
+    background-image: url('Resources/Hinokami.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    flex-grow: 1;
+}
+
+.image4 {
+    background-image: url('Resources/Cain1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-grow: 10;
+}
+
+.image5 {
+    background-image: url('Resources/deadpool1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-grow: 2;
+    margin-bottom: 3rem;
+}
+
+
+.description {  
+    width: 100%; 
+    display: none;
+    padding: 0.05rem;
+    text-align: left;  
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    opacity: 0.9;     
+}
+
+
+.images:hover>.description  {
+    display: block;   
+}
+
+
+ 
+/* TEAM MEMBERS STYLES */
+
+.team-wrapper {     
+    flex-direction: column; 
+    margin: 0 auto;
+    max-width: 1200px;     
+    padding-bottom: 5rem;    
+}
+    
+    
+.team-card-wrapper {    
+    justify-content: center;
+}
+
+
+.team-wrapper,
+.team-card-wrapper,
+.our-team,
+.team,
+.team-role,
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.our-team {    
+    flex-direction: column;
+    width: 300px;   
+    padding-top: 1rem;
+    margin-bottom: 2rem;    
+    border-radius: 4px;       
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    background-color: rgb(211, 211, 211);   
+}
+
+
+@media only screen and (min-width: 540px) {
+    .our-team {
+        margin: 0.5rem;
+    }
+}
+
+
+.team, .team1-role {    
+    flex-direction: column;    
+    align-items: center;     
+}
+
+
+.team img {
+    display: block;
+    width: 130px;
+    height: 160px;
+    border-radius: 100%;
+    margin-bottom: 0.8rem;    
+}
+
+.our-team,
+.team img {
+    border: 1px solid rgb(0, 0, 0) ;
+}
+
+
+.card-text {
+    line-height: normal;        
+    margin-bottom: 2rem;    
+}
+
+.name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.social-links {       
+    justify-content: center; 
+    width: 100%;    
+    padding: 0.8rem 0;
+    border-top: 1px solid rgb(0, 0, 0);     
+    background-color: rgb(255, 255, 255);    
+}
+
+
+.social-links img {    
+    width: 25px;  
+    margin: 0.3rem;   
+}
+
+.social-links img:hover, 
+.social-links img:focus {
+    opacity: 0.5;
+}
+
+
+/* SIGN-UP STYLES */
+
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+
+.sign-up {
+    padding-top: 1rem;
+    background-color: rgb(47, 47, 47);
+    
+}
+
+.sign-up p {    
+    color: rgb(255, 255, 255);
+    margin: 0 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.sign-up input {
+    height: 3vh;
+    width: 250px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;    
+}
+
+.sign-up button {
+    margin-bottom: 1.5rem;
+    min-width: 140px;    
+    max-width: 400px;
+    border: 2px solid rgb(255, 255, 255);    
+    color:rgb(32, 162, 178);
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+
+.sign-up-button:hover {
+    cursor: pointer;
+    background-color: rgb(211, 211, 211);
+}
+
+
+
+/* FOOTER STYLES */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(25, 25, 25);
+    color: rgb(255, 255, 255);
+    height: auto;
+}
+
+footer p {
+    padding-top: 1rem;
+    font-size: .8rem;
+}
+
+footer p span {
+    color:rgb(32, 162, 178);
+}
