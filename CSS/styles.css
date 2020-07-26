@@ -3,16 +3,16 @@
 
 @font-face {
     font-family: "Bebas Neue";
-    src: url('Resources/BebasNeue-Regular.woff2') format('woff2'),
-        url('Resources/BebasNeue-Regular.woff') format('woff');
+    src: url('/Resources/BebasNeue-Regular.woff2') format('woff2'),
+        url('/Resources/BebasNeue-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;   
 }
 
 @font-face {
     font-family: "Poiret One";
-    src: url('Resources/PoiretOne-Regular.woff2') format('woff2'),
-        url('Resources/PoiretOne-Regular.woff') format('woff');
+    src: url('/Resources/PoiretOne-Regular.woff2') format('woff2'),
+        url('/Resources/PoiretOne-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;   
 }
@@ -50,7 +50,7 @@ html {
 
 
 .banner {    
-    background-image: url('Resources/banner2.jpg'); 
+    background-image: url('/Resources/banner2.jpg'); 
     width: 100%;
     background-repeat: no-repeat;
     background-position: top center;
@@ -62,7 +62,7 @@ html {
 @media only screen and (min-width: 1000px) {
     .banner {
         min-height: 450px;
-        background-image: url('Resources/banner3.jpg');
+        background-image: url('/Resources/banner3.jpg');
     }
 }
 
@@ -401,7 +401,7 @@ nav a:hover {
 
 
 .image1 {    
-    background-image: url('Resources/Deku.jpg');
+    background-image: url('/Resources/Deku.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -410,7 +410,7 @@ nav a:hover {
 }
 
 .image2 {
-    background-image: url('Resources/AllMight.jpg');
+    background-image: url('/Resources/AllMight.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
@@ -419,7 +419,7 @@ nav a:hover {
 }
 
 .image3 {
-    background-image: url('Resources/Hinokami.jpg');
+    background-image: url('/Resources/Hinokami.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; 
@@ -427,7 +427,7 @@ nav a:hover {
 }
 
 .image4 {
-    background-image: url('Resources/Cain1.jpg');
+    background-image: url('/Resources/Cain1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -435,7 +435,7 @@ nav a:hover {
 }
 
 .image5 {
-    background-image: url('Resources/deadpool1.jpg');
+    background-image: url('/Resources/deadpool1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
